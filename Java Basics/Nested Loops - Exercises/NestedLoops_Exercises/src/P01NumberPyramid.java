@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class P01NumberPyramid {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int input = Integer.parseInt(scanner.nextLine());
+
+        int current = 1;
+        boolean isBigger = false;
+
+        for (int rows = 1; rows <= input; rows++) {
+            for (int cols = 1; cols <= rows; cols++) {
+                if (current > input) {
+                    isBigger = true;
+                    break;
+                }
+
+                System.out.printf("%d ", current);
+                current++;
+            }
+
+            if (isBigger){
+                break;
+            }
+
+            System.out.println();
+        }
+    }
+}
